@@ -1,0 +1,210 @@
+/* General styles */
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('pexels-anna-nekrashevich-7214758.jpg');
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 100px;
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    /* max-width: 900px; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-top: 34px;
+    color: black;
+}
+
+/* Search form styles */
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.search-form input {
+    width: 70%;
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+.search-form button {
+    padding: 15px 43px;
+    font-size: 1.1rem;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #fff;
+    color: black;
+}
+
+/* Recipe results container */
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-top: 3em;
+}
+
+/* Recipe card styles */
+.card {
+    background: white;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    color: black;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Smaller recipe image */
+.card img {
+    width: 350px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.card h5 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 17px;
+    color: #666;
+    text-align: justify;
+}
+
+.card button {
+    /* margin-top: 15px; */
+    padding: 18px 35px;
+    font-size: 12px;
+    border-radius: 25px;
+    border: 1px solid #007bff;
+    background-color: white;
+    color: #007bff;
+    margin: 0 auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+#favorites-btn {
+    margin-top: 15px;
+    padding: 17px 35px;
+    font-size: 20px;
+    border-radius: 25px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#favorites-btn:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.element {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 25px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 30px;
+    font-size: 18px;
+    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: black;
+}
+
+.search-form i {
+    position: absolute;
+    right: 133px;
+    top: 32px;
+    color: black;
+    /* background-color: black; */
+    border-radius: 50%;
+}
