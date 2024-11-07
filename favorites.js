@@ -1,4 +1,3 @@
-// Function to fetch the favorite recipes
 async function fetchFavoriteRecipes() {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const recipes = await Promise.all(favorites.map(id => fetchRecipeById(id)));
