@@ -5,19 +5,16 @@ async function fetchFavoriteRecipes() {
     return recipes;
 }
 
-// Function to fetch a recipe by ID
 async function fetchRecipeById(recipeId) {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
     const data = await response.json();
-    return data.meals ? data.meals[0] : null; // Return the first meal or null if not found
+    return data.meals ? data.meals[0] : null; 
 }
 
-// Function to render favorite recipes
 async function renderFavoriteRecipes() {
     const favoriteRecipes = await fetchFavoriteRecipes();
     const resultsDiv = document.getElementById('favorite-results');
-    resultsDiv.innerHTML = ''; // Clear previous results
-
+    resultsDiv.innerHTML = ''; 
     if (!favoriteRecipes.length) {
         resultsDiv.innerHTML = '<p class="text-center text-white">No favorite recipes found</p>';
         return;
@@ -42,26 +39,21 @@ async function renderFavoriteRecipes() {
         resultsDiv.appendChild(recipeCard);
     });
 }
-// Function to remove a recipe from favorites
+
 function removefav(recipeId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
-    // Filter out the recipe ID
     favorites = favorites.filter(id => id !== recipeId);
 
-    // Save the updated favorites list back to localStorage
     localStorage.setItem('favorites', JSON.stringify(favorites));
 
-    // Re-render the favorite recipes
     renderFavoriteRecipes();
 }
 
 
-// Function to go back to the main page
 function goBack() {
-    window.location.href = 'index.html'; // Redirect to main page
+    window.location.href = 'index.html'; 
 }
 
-// Call the function to render favorite recipes when the page loads
 renderFavoriteRecipes();
 

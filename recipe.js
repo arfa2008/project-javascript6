@@ -1,17 +1,14 @@
-// Function to get query parameters from the URL
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-// Function to fetch a recipe by ID
 async function fetchRecipeById(recipeId) {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
     const data = await response.json();
-    return data.meals ? data.meals[0] : null; // Return the first meal or null if not found
+    return data.meals ? data.meals[0] : null; 
 }
 
-// Function to render the full recipe details
 async function renderRecipeDetails() {
     const recipeId = getQueryParam('id');
     const recipe = await fetchRecipeById(recipeId);
@@ -37,7 +34,6 @@ async function renderRecipeDetails() {
     }
 }
 
-// Function to get the list of ingredients
 function getIngredientsList(recipe) {
     const ingredients = [];
     for (let i = 1; i <= 20; i++) {
@@ -50,10 +46,8 @@ function getIngredientsList(recipe) {
     return ingredients;
 }
 
-// Function to go back to the previous page
 function goBack() {
-    window.history.back(); // Go back to the previous page
+    window.history.back(); 
 }
 
-// Call the function to render recipe details when the page loads
 renderRecipeDetails();

@@ -1,16 +1,13 @@
-// JavaScript
 
-// Function to fetch recipes from TheMealDB API
 async function fetchRecipes(query = '') {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`);
     const data = await response.json();
     return data.meals;
 }
 
-// Function to render recipe data
 function renderRecipes(recipes) {
     const resultsDiv = document.getElementById('recipe-results');
-    resultsDiv.innerHTML = ''; // Clear previous results
+    resultsDiv.innerHTML = ''; 
 
     if (!recipes) {
         resultsDiv.innerHTML = '<p class="text-center text-white">No recipes found</p>';
@@ -19,7 +16,7 @@ function renderRecipes(recipes) {
 
     recipes.forEach(recipe => {
         const recipeCard = document.createElement('div');
-        recipeCard.classList.add('col-md-4', 'mb-4'); // Add Bootstrap classes for styling
+        recipeCard.classList.add('col-md-4', 'mb-4'); 
 
         recipeCard.innerHTML = `
             <div class="card h-100 shadow-sm">
@@ -38,7 +35,6 @@ function renderRecipes(recipes) {
     });
 }
 
-// Function to handle form submission for search
 document.getElementById('recipe-form').addEventListener('submit', async function (e) {
     e.preventDefault();
     const query = document.getElementById('recipe-name').value.trim();
@@ -50,7 +46,6 @@ document.getElementById('recipe-form').addEventListener('submit', async function
     renderRecipes(recipes);
 });
 
-// Function to add a recipe to favorites (stored in local storage)
 function addToFavorites(recipeId) {
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     if (!favorites.includes(recipeId)) {
@@ -62,13 +57,11 @@ function addToFavorites(recipeId) {
     }
 }
 
-// Function to view the complete recipe
 function viewRecipe(recipeId) {
-    window.location.href = `recipe.html?id=${recipeId}`; // Redirect to recipe detail page
+    window.location.href = `recipe.html?id=${recipeId}`; 
 }
 
-// Function to load and display all recipes on page load
 async function loadAllRecipes() {
-    const recipes = await fetchRecipes(); // Fetch all recipes without a search query
-    renderRecipes(recipes); // Render all recipes on the page
+    const recipes = await fetchRecipes(); 
+    renderRecipes(recipes); 
 }
