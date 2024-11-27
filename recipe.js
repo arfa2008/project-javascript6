@@ -1,8 +1,10 @@
+// Function to get query parameters from the URL
 function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
+// Function to fetch a recipe by ID
 async function fetchRecipeById(recipeId) {
     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeId}`);
     const data = await response.json();
