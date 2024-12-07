@@ -166,6 +166,7 @@ h1 {
 
 .element {
     width: 60%;
+    line-height: 40px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -174,15 +175,18 @@ h1 {
     margin: 0 auto;
     padding-top: 25px;
 }
-
 ul {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    justify-content: center;
-    align-items: center;
+    padding: 30px;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    background: #c0914b75;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+    list-style: none;
+    width: 35%;
 }
-
 .btn {
     margin-top: 15px;
     margin-bottom: 10px;
@@ -207,4 +211,9 @@ ul {
     color: black;
     /* background-color: black; */
     border-radius: 50%;
+}
+.element p {
+    padding: 10px;
+    background: #c0914b75;
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
 }
